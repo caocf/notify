@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
+ * 激活异步配置
  * Created by yangchao
  * on 15/12/17.
  */
