@@ -28,19 +28,16 @@ import junit.framework.Assert;
  * Created by yangchao
  * on 15/12/17.
  */
-public class NotifyApiControllerTest extends BaseTest{
+public class NotifyApiControllerTest extends BaseTest {
 
     private static Logger logger = LoggerFactory.getLogger(NotifyApiControllerTest.class);
-
+    private static NotifyRequest emailRequest;
+    private static NotifyRequest smsRequest;
     @Autowired
     @InjectMocks
     NotifyApiController notifyApiController;
-
     @Mock
     QueueService queueService;
-
-    private static NotifyRequest emailRequest;
-    private static NotifyRequest smsRequest;
 
     @Before
     public void init() throws InterruptedException {
@@ -111,6 +108,5 @@ public class NotifyApiControllerTest extends BaseTest{
         notifyRequest.setContent("email content");
         return notifyRequest;
     }
-
 
 }

@@ -26,12 +26,10 @@ import com.google.common.collect.Lists;
  */
 public class QueueServiceTest extends BaseTest {
 
+    private final static QueueFactory queueFactory = QueueFactory.getInstance();
     private static Logger log = Logger.getLogger(QueueServiceTest.class);
-
     @Autowired
     private QueueService queueService;
-
-    private final static QueueFactory queueFactory = QueueFactory.getInstance();
 
     @Before
     public void before() {

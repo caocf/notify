@@ -4,6 +4,7 @@
 package com.baidu.yangchao.notify.service;
 
 //import org.apache.log4j.Logger;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +19,7 @@ import com.baidu.yangchao.notify.domain.SmsDO;
  */
 public class NotifyServiceTest extends BaseTest {
 
-//    private static Logger log = Logger.getLogger(NotifyServiceTest.class);
+    //    private static Logger log = Logger.getLogger(NotifyServiceTest.class);
 
     @Autowired
     private NotifyService notifyService;
@@ -27,7 +28,7 @@ public class NotifyServiceTest extends BaseTest {
      * 测试发送邮件
      */
     @Test
-    public void testSendEMail(){
+    public void testSendEMail() {
         EmailDO emailDO = mockEmailDO();
         notifyService.sendEmail(emailDO);
     }
@@ -36,7 +37,7 @@ public class NotifyServiceTest extends BaseTest {
      * 测试发送短信
      */
     @Test
-    public void testSendSms(){
+    public void testSendSms() {
         SmsDO smsDO = mockSmsDO();
         notifyService.sendSms(smsDO);
     }

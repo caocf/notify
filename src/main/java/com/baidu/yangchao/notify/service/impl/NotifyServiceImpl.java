@@ -34,19 +34,16 @@ public class NotifyServiceImpl implements NotifyService {
     }
 
     private void workEmail() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    EmailDO emailDO = null;
-                    try {
-                        emailDO = emailFactory.cosume();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    // 异步执行
-                    sendEmail(emailDO);
+        new Thread(() -> {
+            while (true) {
+                EmailDO emailDO = null;
+                try {
+                    emailDO = emailFactory.cosume();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                // 异步执行
+                sendEmail(emailDO);
             }
         }).start();
 
@@ -54,18 +51,15 @@ public class NotifyServiceImpl implements NotifyService {
     }
 
     private void workSms() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    SmsDO smsDO = null;
-                    try {
-                        smsDO = smsFactory.cosume();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    sendSms(smsDO);
+        new Thread(() -> {
+            while (true) {
+                SmsDO smsDO = null;
+                try {
+                    smsDO = smsFactory.cosume();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                sendSms(smsDO);
             }
         }).start();
 

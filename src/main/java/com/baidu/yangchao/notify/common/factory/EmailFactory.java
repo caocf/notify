@@ -26,7 +26,9 @@ public class EmailFactory {
     }
 
     public void produce(EmailDO emailDO) throws InterruptedException {
-        emailBQ.put(emailDO);
+        if (null != emailDO) {
+            emailBQ.put(emailDO);
+        }
     }
 
     public EmailDO cosume() throws InterruptedException {

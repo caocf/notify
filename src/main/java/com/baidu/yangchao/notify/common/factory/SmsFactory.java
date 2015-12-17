@@ -24,8 +24,10 @@ public class SmsFactory {
         return emailFactory;
     }
 
-    public void produce(SmsDO SmsDO) throws InterruptedException {
-        smsBQ.put(SmsDO);
+    public void produce(SmsDO smsDO) throws InterruptedException {
+        if (null != smsDO) {
+            smsBQ.put(smsDO);
+        }
     }
 
     public SmsDO cosume() throws InterruptedException {
