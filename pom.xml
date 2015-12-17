@@ -56,6 +56,12 @@
             <artifactId>guava</artifactId>
             <version>r06</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -84,13 +90,13 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.5.2</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <formats>
-                        <format>html</format>
-                        <format>xml</format>
-                    </formats>
-                </configuration>
+                <!--<configuration>-->
+                <!--<encoding>UTF-8</encoding>-->
+                <!--<formats>-->
+                <!--<format>html</format>-->
+                <!--<format>xml</format>-->
+                <!--</formats>-->
+                <!--</configuration>-->
             </plugin>
         </plugins>
     </build>
