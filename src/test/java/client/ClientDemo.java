@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2015 Baidu, Inc. All Rights Reserved.
  */
-package clientDemo;
+package client;
 
 import java.util.Map;
 
@@ -28,7 +28,7 @@ public class ClientDemo {
 
     private static Logger log = LoggerFactory.getLogger(ClientDemo.class);
 
-    private final static String URL = "http://127.0.0.1:8080/notify/do";
+    private static final String URL = "http://127.0.0.1:8080/notify/do";
 
     private static final String APPLICATION_JSON = "application/json";
 
@@ -50,6 +50,7 @@ public class ClientDemo {
         se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON));
         httpPost.setEntity(se);
         httpClient.execute(httpPost);
+        log.info("post success");
     }
 
     private static void sendSms() throws Exception {

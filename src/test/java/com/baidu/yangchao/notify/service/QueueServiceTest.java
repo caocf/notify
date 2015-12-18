@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.alibaba.fastjson.JSON;
 import com.baidu.yangchao.notify.BaseTest;
 import com.baidu.yangchao.notify.common.conf.NotifyEnum;
 import com.baidu.yangchao.notify.common.factory.QueueFactory;
@@ -26,7 +27,7 @@ import com.google.common.collect.Lists;
  */
 public class QueueServiceTest extends BaseTest {
 
-    private final static QueueFactory queueFactory = QueueFactory.getInstance();
+    private static final QueueFactory queueFactory = QueueFactory.getInstance();
     private static Logger log = Logger.getLogger(QueueServiceTest.class);
     @Autowired
     private QueueService queueService;
@@ -40,6 +41,7 @@ public class QueueServiceTest extends BaseTest {
         EmailDO emailDO = mockEmail();
         queueService.importEmail(emailDO);
         List<EmailDO> emailDOs = Lists.newArrayList(queueFactory.getEmail());
+        log.info(JSON.toJSON(emailDOs));
         assertEquals(1, emailDOs.size());
     }
 
@@ -48,6 +50,7 @@ public class QueueServiceTest extends BaseTest {
         SmsDO smsDO = mockSmsDO();
         queueService.importSms(smsDO);
         List<SmsDO> smsDOs = Lists.newArrayList(queueFactory.getSms());
+        log.info(JSON.toJSON(smsDO));
         assertEquals(1, smsDOs.size());
     }
 

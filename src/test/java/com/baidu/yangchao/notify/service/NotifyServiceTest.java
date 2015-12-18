@@ -3,8 +3,6 @@
  */
 package com.baidu.yangchao.notify.service;
 
-//import org.apache.log4j.Logger;
-
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,8 +16,6 @@ import com.baidu.yangchao.notify.domain.SmsDO;
  * on 15/12/17.
  */
 public class NotifyServiceTest extends BaseTest {
-
-    //    private static Logger log = Logger.getLogger(NotifyServiceTest.class);
 
     @Autowired
     private NotifyService notifyService;
